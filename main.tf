@@ -16,6 +16,8 @@ resource "google_compute_subnetwork" "subnet_test" {
 resource "google_storage_bucket" "shaiksaleemafrozbucket" {
   name     = "shaiksaleemafrozbucket-${random_id.bucket_suffix.hex}"
   location = "US"
+
+  uniform_bucket_level_access = true
 }
 
 # Random suffix for unique bucket name
