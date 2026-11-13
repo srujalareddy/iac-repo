@@ -19,7 +19,8 @@ pipeline {
                     gcloud config get-value project
 
                     echo "Checking ADC access..."
-                    gcloud auth application-default print-access-token
+                    gcloud auth application-default print-access-token > /dev/null
+                    echo "ADC authentication available"
                 '''
             }
         }
@@ -27,7 +28,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 sh '''
-                    terraform init -input=false -reconfigure
+                    terraform init -input=false -reconfigure -upgrade
                 '''
             }
         }
