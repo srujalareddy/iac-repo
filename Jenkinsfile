@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/kirandevops2026/iac-repo.git'
+                    url: 'https://github.com/srujalareddy/iac-repo.git'
             }
         }
 
